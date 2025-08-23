@@ -43,7 +43,7 @@ export const ListRoom = () => {
     if (user) {
       fetchRooms()
     }
-  }, [user,showRoomUpdate])
+  }, [user, showRoomUpdate])
 
   return (
 
@@ -64,8 +64,9 @@ export const ListRoom = () => {
               <th className='py-3 px-4 text-gray-800 font-medium'>Name</th>
               <th className='py-3 px-4 text-gray-800 font-medium max-sm:hidden'>facility</th>
               <th className='py-3 px-4 text-gray-800 font-medium text-center'>price/Night</th>
-              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Actions</th>
+              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Available</th>
               <th className='py-3 px-4 text-gray-800 font-medium text-center'>Update</th>
+              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Delete</th>
             </tr>
           </thead>
           <tbody className='text-sm'>
@@ -101,6 +102,20 @@ export const ListRoom = () => {
                       <button onClick={() => { setShowRoomUpdate(true); setUpdatedRoomId(items._id) }}
                         className='bg-primary text-white px-5 py-2 rounded cursor-pointer'>update</button>
                     </label>
+                  </td>
+
+                  <td className='py-3 px-4 border-t border-gray-300 text-sm text-red-500 text-centertext-center'>
+                    <button className='cursor-pointer'>
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                        className="w-5 h-5" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 
+                          2 0 01-1.995-1.858L5 7m5-4h4m-4 0a1 
+                          1 0 00-1 1v1h6V4a1 1 0 00-1-1m-40h4" />
+                      </svg>
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))
